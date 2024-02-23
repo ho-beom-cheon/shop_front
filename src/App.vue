@@ -1,26 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <TheHeader/>
+    <RouterView/>
+    <teleport to="body">
+      <div
+          v-if="isLoading"
+          class="spinner-border text-danger"
+          role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </teleport>
+  <TheFooter/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { mapState } from 'vuex'
+import TheHeader from "@/components/layouts/TheHeader.vue";
+import TheFooter from "@/components/layouts/TheFooter.vue";
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+    TheFooter,
+    TheHeader
+  },
+  computed: {
+    ...mapState(['isLoading']),
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
