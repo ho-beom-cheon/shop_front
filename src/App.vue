@@ -1,19 +1,29 @@
 <template>
   <TheHeader/>
-    <MainSection/>
+    <RouterView/>
+    <teleport to="body">
+      <div
+          v-if="isLoading"
+          class="spinner-border text-danger"
+          role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </teleport>
   <TheFooter/>
 </template>
 
 <script>
-import MainSection from "@/components/layouts/MainSection.vue";
+import { mapState } from 'vuex'
 import TheHeader from "@/components/layouts/TheHeader.vue";
 import TheFooter from "@/components/layouts/TheFooter.vue";
 export default {
   components: {
-    MainSection,
     TheFooter,
     TheHeader
-  }
+  },
+  computed: {
+    ...mapState(['isLoading']),
+  },
 }
 </script>
 
