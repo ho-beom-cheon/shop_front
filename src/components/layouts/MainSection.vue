@@ -3,7 +3,7 @@
     <div>a</div>
   </section>
   <section class="category__box">
-    <btton @click="click">click</btton>
+    <button @click="click">click</button>
   </section>
   <section class="category__box">
     <div>c</div>
@@ -11,18 +11,20 @@
 </template>
 
 <script>
+import { useRouter } from 'vue-router'
 
 export default {
-  components: {
-  },
   setup() {
+    const router = useRouter()
+
     const click = () => {
-      console.log('clicked')
+      router.push('/login')
     }
+
     return {
       click,
     }
-  }
+  },
 }
 </script>
 

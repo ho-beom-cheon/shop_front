@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:vue/vue3-recommended"],
+  "rules": {
+    "semi": ["error", "never"], // 세미콜론은 사용하지 않습니다.
+    "quotes": ["error", "single"], // 따옴표는 싱글 따옴표를 사용합니다.
+    "eol-last": ["error", "always"], // 파일 끝에는 항상 빈 줄이 있어야 합니다.
+
+    "vue/html-closing-bracket-newline": [
+      "error",
+      {
+        "singleline": "never", // 한 줄에 있는 HTML 요소의 닫는 괄호는 새로운 줄에 오지 않아야 합니다.
+        "multiline": "never" // 여러 줄에 걸친 HTML 요소의 닫는 괄호는 새로운 줄에 오지 않아야 합니다.
+      }
+    ],
+    "vue/comment-directive": "off",         // Vue.js 템플릿 내에서 ESLint 지시문을 허용하지 않습니다.
+    "vue/multi-word-component-names": "off" // 컴포넌트 이름이 여러 단어로 구성되어야 하는 규칙을 비활성화합니다.
+  }
+}
