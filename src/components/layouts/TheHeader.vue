@@ -7,7 +7,7 @@
             <h4 class="text-white">Beom Market</h4>
             <ul class="list-unstyled">
               <li>
-                <router-link to="/" class="text-white">Main</router-link>
+                <router-link to="/main" class="text-white">Main</router-link>
               </li>
               <li>
                 <router-link to="/login" class="text-white" v-if="!$store.state.account.id">login</router-link>

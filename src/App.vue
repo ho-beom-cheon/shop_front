@@ -7,10 +7,6 @@
 <script>
 import TheHeader from '@/components/layouts/TheHeader.vue'
 import TheFooter from '@/components/layouts/TheFooter.vue'
-import store from '@/store'
-import axios from 'axios'
-import {watch} from 'vue'
-import {useRouter} from 'vue-router'
 
 export default {
   name: 'App',
@@ -19,18 +15,9 @@ export default {
     TheHeader
   },
   setup() {
-          const check = () => {
-            axios.get('').then(({data}) => {
-                  console.log(data)
-                  store.commit('setAccount', data || 0)
-             })
-          }
-          const route = useRouter()
 
-          watch(route, () => {
-                check()
-          })
-    }
+
+  }
 }
 </script>
 
