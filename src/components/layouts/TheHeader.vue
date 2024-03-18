@@ -13,6 +13,9 @@
                 <router-link to="/login" class="text-white" v-if="!$store.state.account.id">login</router-link>
                 <a to="/login" class="text-white" @click="logout()" v-else>로그아웃</a>
               </li>
+              <li>
+                <router-link to="/signup" class="text-white">singUp</router-link>
+              </li>
             </ul>
           </div>
         </div>
