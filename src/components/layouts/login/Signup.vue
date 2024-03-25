@@ -26,6 +26,10 @@
                 <label for="userPhone">Phone</label>
                 <input type="text" class="form-control" id="userPhone" v-model="state.form.userPhone">
               </div>
+              <div class="form-group mt-2">
+                <label for="userNickname">User NickName</label>
+                <input type="text" class="form-control" id="userName" v-model="state.form.userNickname">
+              </div>
               <button type="button" class="btn btn-primary mt-2" @click="register">Register</button>
             </form>
           </div>
@@ -50,6 +54,7 @@ export default {
         userName: '',
         userEmail: '',
         userPhone: '',
+        userNickname: '',
       }
     })
     const register = () => {
@@ -61,6 +66,7 @@ export default {
         userName: state.form.userName,
         userEmail: state.form.userEmail,
         userPhone: state.form.userPhone,
+        userNickname : state.form.userNickname,
       })
       .then(({data}) => {
         if (data) {
